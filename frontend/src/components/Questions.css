@@ -1,0 +1,30 @@
+.question-box{
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.title{
+    flex-basis: 5%;
+}
+
+.desc{
+    flex-basis: 40%;
+}
+
+.test-cases{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    flex-basis: 20%;
+}
+
+.box-item{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.spacer{
+    height: 10px;
+}

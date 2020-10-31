@@ -1,0 +1,42 @@
+.main-container{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.body-container{
+    display:flex;
+    flex-direction: row;
+}
+
+.container-item{
+    display:flex;
+    flex-grow: 1;
+    font-size: 1.2rem;
+    color: black;
+    text-align: center;
+}
+
+.page-body{
+    background-color: #F6F6F6;
+}
+
+
+.questions{
+    flex-basis: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.editor{
+    background-color: burlywood;
+    flex-basis: 50%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.notepad-and-video{
+    /* background-color: cornflowerblue; */
+}
