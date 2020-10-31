@@ -3,7 +3,7 @@ import Editor from '@monaco-editor/react';
 
 function CodeEditor() {
     return (
-            <Editor height="100vh" language="javascript" options={{fontSize:"20px"}}/>
+            <Editor height="70vh" language="javascript" options={{fontSize:"20px"}}/>
     )
 }
 

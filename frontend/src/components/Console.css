@@ -1,0 +1,37 @@
+.console{
+    display:flex;
+    flex-direction:row;
+    background-color: #F6F6F6;
+    padding-top: 1%;
+}
+
+.io-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #F6F6F6;
+}
+
+.input-box{
+    display: flex;
+    flex-grow: 1;
+    /* border-bottom: 1px solid black; */
+    padding-top: 25px;
+    padding-left: 10%;
+}
+
+.spacer{
+    width: 15px;;
+}
+
+.in-box{
+    border-right: 1px solid black;
+}
+
+.run-ctrl{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-basis: 22%;
+    background-color: #d3d1d1;
+}
