@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
 import Questions from '../components/Questions';
+import CodeEditor from '../components/CodeEditor'
 import './InterviewPage.css'
 
 const sampleData = {
@@ -26,7 +27,9 @@ export default function InterviewPage() {
                         sampleTests={sampleData.sampleTests}
                     />
                 </div>
-                <div className="container-item editor">Editor</div>
+                <div className="container-item editor">
+                    <CodeEditor/>
+                </div>
                 <div className="container-item notepad-and-video">Notepad & Video</div>
             </div>
         </div>
