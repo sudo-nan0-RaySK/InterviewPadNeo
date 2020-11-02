@@ -1,9 +1,9 @@
 import React from 'react'
-import Editor from '@monaco-editor/react';
+import MonacoEditor from '@monaco-editor/react';
 
-function CodeEditor() {
+function CodeEditor({ language }) {
     return (
-            <Editor height="70vh" language="javascript" options={{fontSize:"20px"}}/>
+        <MonacoEditor height="70vh" language={language} options={{ fontSize: "20px" }} value="# Type your solution here" />
     )
 }
 

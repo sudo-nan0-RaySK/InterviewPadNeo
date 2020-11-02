@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import Questions from '../components/Questions';
 import CodeEditor from '../components/CodeEditor'
 import Console from '../components/Console'
+import Notepad from '../components/Notepad'
 import './InterviewPage.css'
 
 const sampleData = {
@@ -16,10 +17,12 @@ const sampleData = {
     A = [-1,2,4,5,-1] , ans => 11`
 }
 
-export default function InterviewPage() {
+export default function InterviewPage({language,updateLanguage}) {
     return (
         <div className="main-container">
-            <NavBar className="container-item" />
+            <NavBar className="container-item" 
+            language = {language} 
+            updateLanguage = {updateLanguage}/>
             <div className="container-item page-body">
                 <div className="container-item questions">
                     <Questions
@@ -29,10 +32,12 @@ export default function InterviewPage() {
                     />
                 </div>
                 <div className="container-item editor">
-                    <CodeEditor/>
+                    <CodeEditor language = {language}/>
                     <Console />
                 </div>
-                <div className="container-item notepad-and-video">Notepad & Video</div>
+                <div className="container-item notepad-and-video">
+                    <Notepad/>
+                </div>
             </div>
         </div>
     );
