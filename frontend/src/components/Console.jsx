@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button } from 'popcom';
 import { CodeContext } from '../contexts/CodeContext';
+import { callRCE } from '../API/requests';
 import './Console.css';
 
 function Console() {
@@ -11,12 +12,20 @@ function Console() {
         codeOptions
     } = useContext(CodeContext);
 
-    const onInputChangedHandler = (evt) =>{
+    const [isEnabled, setEnabled] = useState(true);
+
+    const onInputChangedHandler = (evt) => {
         updateInput(evt.target.value);
     }
 
-    const onRunClikedHandler = () =>{
+    const onRunClikedHandler = async () => {
         // Axios call goes here! and run btn is diabled
+        console.log('Button clicked')
+        setEnabled(false);
+        let response = await callRCE({ code, ...codeOptions });
+        console.log(response)
+        updateOutput(response.obtainedOutput);
+        setEnabled(true);
     }
 
     return (
@@ -34,7 +43,11 @@ function Console() {
                 </div>
             </div>
             <div className="run-ctrl theme-default">
-                <Button variant="success"> Run Code</Button>
+                <Button variant="success"
+                    onClick={onRunClikedHandler}
+                    disabled={!isEnabled}>
+                    {isEnabled ? "Run Code" : "Running..."}
+                </Button>
                 <Button variant="warning"> Clear Code</Button>
             </div>
         </div>
