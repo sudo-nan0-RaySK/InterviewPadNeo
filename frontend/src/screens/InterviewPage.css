@@ -23,7 +23,7 @@
 
 
 .questions{
-    flex-basis: 17%;
+    flex-basis: 15%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,10 +31,24 @@
 
 
 .editor{
-    background-color: burlywood;
+    background-color: grey;
     flex-basis: 50%;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
+}
+
+.monaco{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 65%;
+    overflow: auto;
+}
+
+.console{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 35%;
 }
 
 .notepad-and-video{

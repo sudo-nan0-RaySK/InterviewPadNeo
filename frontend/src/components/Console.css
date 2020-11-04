@@ -1,8 +1,10 @@
-.console{
+.console-box{
     display:flex;
     flex-direction:row;
     background-color: #F6F6F6;
     padding-top: 1%;
+    flex-basis: 40%;
+    /* border: 2px solid red; */
 }
 
 .io-container{
@@ -17,7 +19,8 @@
     flex-grow: 1;
     /* border-bottom: 1px solid black; */
     padding-top: 25px;
-    padding-left: 10%;
+    padding-left: 5%;
+    padding-bottom: 2%;
 }
 
 .spacer{
@@ -32,6 +35,6 @@
     padding-top: 5px;
     display: flex;
     flex-direction: row-reverse;
-    flex-basis: 22%;
+    flex-basis: 15%;
     background-color: #d3d1d1;
 }

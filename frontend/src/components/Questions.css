@@ -3,14 +3,19 @@
     flex-direction: column;
     flex-grow:1;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 1vw;
 }
 
 .title{
-    flex-basis: 5%;
+    flex-basis: 3%;
+    font-size: 1.8vw;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2%;
 }
 
 .desc{
-    flex-basis: 40%;
+    flex-basis: 32%;
 }
 
 .test-cases{

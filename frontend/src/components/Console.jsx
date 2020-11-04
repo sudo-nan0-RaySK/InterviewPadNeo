@@ -5,16 +5,16 @@ import './Console.css'
 function Console() {
     return (
         <div className="io-container">
-            <div className="console">
+            <div className="console-box">
                 <div className="input-box in-box">
                     <h3>Input:</h3> <br />
                     <div className="spacer"></div>
-                    <textarea name="inp" id="inp" cols="20" rows="5"></textarea>
+                    <textarea name="inp" id="inp" rows="5" cols="25" ></textarea>
                 </div>
                 <div className="input-box ">
                     <h3>Output:</h3> <br />
                     <div className="spacer"></div>
-                    <textarea name="inp" id="inp" cols="20" rows="5" contentEditable="false"></textarea>
+                    <textarea name="inp" id="inp" rows="5" cols="25" contentEditable="false"></textarea>
                 </div>
             </div>
             <div className="run-ctrl theme-default">

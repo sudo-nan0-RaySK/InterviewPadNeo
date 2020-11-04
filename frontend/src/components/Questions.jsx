@@ -8,7 +8,7 @@ function Questions({ questionTitle, questionDescription, sampleTests }) {
         <div className="question-box">
             <div className="title box-item">
                 <Container>
-                    <h2>{questionTitle}</h2>
+                    {questionTitle}
                 </Container>
             </div>
 
