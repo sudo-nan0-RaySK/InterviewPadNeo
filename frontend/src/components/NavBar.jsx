@@ -3,7 +3,7 @@ import { Nav, Navbar, Icon } from 'rsuite'
 import LanguageSelector from './LanguageSelector';
 import './NavBar.css'
 
-export default function NavBar(props) {
+export default function NavBar() {
     return (
         <div>
             <Navbar appearance="inverse">
@@ -14,7 +14,7 @@ export default function NavBar(props) {
                     <Nav>
                         <Nav.Item icon={<Icon icon="home" />} >Home</Nav.Item>
                         <Nav.Item icon={<Icon icon="info" />}> Info </Nav.Item>
-                        <LanguageSelector {...props} />
+                        <LanguageSelector />
                     </Nav>
 
                     <Nav pullRight>

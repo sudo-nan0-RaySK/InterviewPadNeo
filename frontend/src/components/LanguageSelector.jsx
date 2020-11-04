@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './LanguageSelector.css';
 import { Dropdown } from 'rsuite';
+import {CodeContext} from '../contexts/CodeContext';
 
 
-function LanguageSelector({ language, updateLanguage }) {
-
-    const toDisplayLang = { 'python': 'Python 3', 'c++': 'C++', 'java': 'Java', 'javascript': 'JavaScript' };
+function LanguageSelector() {
+    const {codeOptions,updateLanguage} = useContext(CodeContext);
+    const toDisplayLang = { 'Python': 'Python 3', 'C': 'C++', 'Java': 'Java', 'Javascript': 'JavaScript' };
 
     const changeLanguage = (lang) => {
         console.log(lang)
@@ -13,11 +14,11 @@ function LanguageSelector({ language, updateLanguage }) {
     }
 
     return (
-        <Dropdown title={toDisplayLang[language]}>
-            <Dropdown.Item onSelect={() => changeLanguage('python')}>Python 3</Dropdown.Item>
-            <Dropdown.Item onSelect={() => changeLanguage('cpp')}>C++</Dropdown.Item>
-            <Dropdown.Item onSelect={() => changeLanguage('java')}>Java</Dropdown.Item>
-            <Dropdown.Item onSelect={() => changeLanguage('javascript')}>JavaScript</Dropdown.Item>
+        <Dropdown title={toDisplayLang[codeOptions.language]}>
+            <Dropdown.Item onSelect={() => changeLanguage('Python')}>Python 3</Dropdown.Item>
+            <Dropdown.Item onSelect={() => changeLanguage('C')}>C++</Dropdown.Item>
+            <Dropdown.Item onSelect={() => changeLanguage('Java')}>Java</Dropdown.Item>
+            <Dropdown.Item onSelect={() => changeLanguage('Javascript')}>JavaScript</Dropdown.Item>
         </Dropdown>
     )
 }

@@ -17,12 +17,10 @@ const sampleData = {
     A = [-1,2,4,5,-1] , ans => 11`
 }
 
-export default function InterviewPage({ language, updateLanguage }) {
+export default function InterviewPage() {
     return (
         <div className="main-container">
-            <NavBar className="container-item"
-                language={language}
-                updateLanguage={updateLanguage} />
+            <NavBar className="container-item" />
             <div className="container-item page-body">
                 <div className="container-item questions">
                     <Questions
@@ -33,14 +31,14 @@ export default function InterviewPage({ language, updateLanguage }) {
                 </div>
                 <div className="container-item editor">
                     <div className="monaco">
-                        <CodeEditor language={language} />
+                        <CodeEditor />
                     </div>
                     <div className="console">
                         <Console />
                     </div>
                 </div>
                 <div className="container-item notepad-and-video">
-                    {/* <Notepad/> */}
+                    <Notepad/>
                 </div>
             </div>
         </div>

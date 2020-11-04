@@ -1,9 +1,23 @@
-import React from 'react'
-import MonacoEditor from '@monaco-editor/react';
+import React, {useContext} from 'react'
+import {ControlledEditor} from '@monaco-editor/react';
+import {CodeContext} from '../contexts/CodeContext';
 
-function CodeEditor({ language }) {
+function CodeEditor() {
+
+    const {codeOptions, updateCode} = useContext(CodeContext);
+
+    const codeChangedHandler = (ev,value) => {
+        updateCode(value);
+    }
+
     return (
-        <MonacoEditor height="65vh" language={language} options={{ fontSize: "16px", automaticLayout: true }} value="# Type your solution here" />
+        <ControlledEditor 
+            height="65vh" 
+            language={codeOptions.language.toLowerCase()} 
+            options={{ fontSize: "16px", automaticLayout: true }} 
+            value="# Type your solution here"
+            onChange = {codeChangedHandler} 
+        />
     )
 }
 
