@@ -7,12 +7,16 @@ services:
         - ./backend:/usr/src/app
         ports: 
         - 5001:5000
+        depends_on: 
+        - primary-worker
     frontend:
         build: ./frontend
         volumes:
         - ./frontend:/usr/src/app
         ports:
-        - 3000:3000
+        - 3000:5000
+        depends_on: 
+        - backend
     primary-worker:
         build: ./workers
         volumes: 
