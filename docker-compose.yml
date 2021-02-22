@@ -1,0 +1,27 @@
+# Uses sibling container to spawn primary worker
+version: "3"
+services:
+    backend:
+        build: ./backend
+        volumes:
+        - ./backend:/usr/src/app
+        ports: 
+        - 5001:5000
+    frontend:
+        build: ./frontend
+        volumes:
+        - ./frontend:/usr/src/app
+        ports:
+        - 3000:3000
+    primary-worker:
+        build: ./workers
+        volumes: 
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./workers:/urs/src/app
+        - /tmp/code-exec:/tmp/code-exec
+        depends_on: 
+        - redis
+    redis:
+        image: redis:6
+        ports: 
+        - 6379:6379

@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const Utils = require('../utils/utils');
 const { CodeExecutor,languages } = require('code-executor');
-const codeExecutor = new CodeExecutor('interviewPadNeo', 'redis://127.0.0.1:6379');
+const codeExecutor = new CodeExecutor('interviewPadNeo', 'redis://redis:6379');
 
 async function executeCode(inputObject){
     const input = {

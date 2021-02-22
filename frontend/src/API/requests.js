@@ -12,7 +12,7 @@ export async function callRCE({code,language,input,output}){
         ]
     };
     const axios  = Axios.create({
-        baseURL:"http://localhost:5000",
+        baseURL:"http://localhost:5001",
         responseType:"json"
     })
     const response = await axios.post('/rce',payload);

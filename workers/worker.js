@@ -1,7 +1,7 @@
 
 const { Worker } = require('code-executor');
 
-const worker = new Worker('interviewPadNeo', 'redis://127.0.0.1:6379');
+const worker = new Worker('interviewPadNeo', 'redis://redis:6379');
 
 const startWorker = async () => {
     try {
