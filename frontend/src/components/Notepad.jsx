@@ -10,7 +10,6 @@ function Notepad() {
 
     return (
             <DrawingBoard
-                userId="user1" 
                 style={{width:"500px"}}
                 operations = {drawOperation}
                 onChange = {(newOperation,_) =>{
