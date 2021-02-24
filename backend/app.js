@@ -36,9 +36,15 @@ const io = socket.listen(server);
 
 io.on('connection', (client) => {
     console.log('A client has connected', client.id);
+
     client.on('codeChange', ({newCode}) => {
         console.log('New code recived from', client.id, 'code:',newCode);
         io.sockets.emit('codeChange', { newCode });
+    })
+
+    client.on('drawChange', ({newOperation}) => {
+        console.log('New draw operation recived from', client.id, newOperation);
+        io.sockets.emit('drawChange',{newOperation});
     })
 });
 

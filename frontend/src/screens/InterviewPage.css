@@ -32,7 +32,7 @@
 
 .editor{
     background-color: grey;
-    flex-basis: 50%;
+    flex-basis: 60%;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -51,3 +51,7 @@
     flex-basis: 35%;
 }
 
+.notepad-and-video{
+    background-color: aquamarine;
+    flex-basis: 25%;
+}

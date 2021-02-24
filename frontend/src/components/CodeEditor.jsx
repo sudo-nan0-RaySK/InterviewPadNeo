@@ -1,14 +1,18 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {ControlledEditor} from '@monaco-editor/react';
 import {CodeContext} from '../contexts/CodeContext';
 
 function CodeEditor() {
 
-    const {code, codeOptions, updateCode} = useContext(CodeContext);
-
+    const {code, codeOptions, updateCode, listenUpdates} = useContext(CodeContext);
+    
     const codeChangedHandler = (ev,value) => {
         updateCode(value);
     }
+
+    useEffect(() => {
+        listenUpdates();
+    })
 
     return (
         <ControlledEditor 

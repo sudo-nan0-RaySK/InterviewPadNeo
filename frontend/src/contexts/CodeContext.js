@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, createContext } from 'react'
 import io from 'socket.io-client';
 
 const socket = io('http://localhost:5001');
@@ -25,11 +25,12 @@ function CodeContextProvider(props) {
         setCodeOptions({ ...codeOptions, output: newOutput })
     }
 
-    useEffect(() => {
+    const listenUpdates = () => {
         socket.on('codeChange', ({ newCode }) => {
             setCode(newCode);
         })
-    }, []);
+    }
+
 
     return (
         <CodeContext.Provider
@@ -40,7 +41,8 @@ function CodeContextProvider(props) {
                     updateCode,
                     updateInput,
                     updateOutput,
-                    updateLanguage
+                    updateLanguage,
+                    listenUpdates
                 }
             }>
             {props.children}
